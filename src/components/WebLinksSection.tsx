@@ -25,17 +25,25 @@ export default function WebLinksSection({ category }: { category: WebLinkCategor
             href={link.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="card-hover group flex items-start gap-3 rounded-xl border border-white/5 bg-[#1a1a24] p-4"
+            className="card-hover group flex flex-col rounded-xl border border-white/5 bg-[#1a1a24] p-4 transition hover:border-brand-500/30"
           >
-            <div className="flex-1 min-w-0">
-              <h3 className="truncate font-semibold text-white transition group-hover:text-brand-400">
-                {link.name}
-              </h3>
-              <p className="mt-1 line-clamp-2 text-sm text-gray-400">{link.description}</p>
+            <div className="flex items-start gap-3">
+              <div className="flex-1 min-w-0">
+                <h3 className="truncate font-semibold text-white transition group-hover:text-brand-400">
+                  {link.name}
+                </h3>
+                <p className="mt-1 line-clamp-2 text-sm text-gray-400">{link.description}</p>
+              </div>
+              <svg className="mt-0.5 h-5 w-5 shrink-0 text-gray-600 transition group-hover:text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
             </div>
-            <svg className="mt-0.5 h-5 w-5 shrink-0 text-gray-600 transition group-hover:text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-            </svg>
+            <div className="mt-3 inline-flex items-center gap-1.5 self-start rounded-lg bg-brand-500/10 px-3 py-1.5 text-xs font-medium text-brand-400 transition group-hover:bg-brand-500/20">
+              <svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+              Visit Site
+            </div>
           </a>
         ))}
       </div>

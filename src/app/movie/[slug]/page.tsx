@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic';
+
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -5,10 +7,6 @@ import { movies, getMovieBySlug, getRelatedMovies } from '@/data/movies';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import MovieCard from '@/components/MovieCard';
-
-export function generateStaticParams() {
-  return movies.map((m) => ({ slug: m.slug }));
-}
 
 export default function MovieDetail({ params }: { params: { slug: string } }) {
   const movie = getMovieBySlug(params.slug);
