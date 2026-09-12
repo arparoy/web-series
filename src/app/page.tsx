@@ -7,6 +7,8 @@ import Hero from '@/components/Hero';
 import MovieGrid from '@/components/MovieGrid';
 import FilterBar from '@/components/FilterBar';
 import Footer from '@/components/Footer';
+import WebLinksSection from '@/components/WebLinksSection';
+import { webLinkCategories } from '@/data/weblinks';
 import { useSearchParams } from 'next/navigation';
 import { Suspense } from 'react';
 
@@ -78,6 +80,10 @@ function HomeContent() {
           <FilterBar onFilter={(g, s) => { setGenre(g); setSort(s); }} />
           <MovieGrid movies={filtered} />
         </section>
+
+        {!query && webLinkCategories.map((cat) => (
+          <WebLinksSection key={cat.id} category={cat} />
+        ))}
       </main>
       <Footer />
     </>
